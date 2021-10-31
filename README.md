@@ -1,2 +1,9 @@
-# Docker-environment
-Docker environment using docker-compose
+# Docker environment
+
+[] Basic setup of docker environment using docker-compose
+
+[] Used containers:
+  - Mysql
+  - PHP
+  - Nginx
+  - PhpMyAdmin
