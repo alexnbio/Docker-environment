@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 # Services
 services:
@@ -16,12 +16,17 @@ services:
 
   # PHP Service
   php:
-    build: ./.docker/php
+    build:
+      context: ./.docker
     working_dir: ${COMPOSE_WORKING_DIR}
     volumes:
       - ./:${COMPOSE_WORKING_DIR}
     depends_on:
       - mysql
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - XDEBUG_TRIGGER=${PHP_IDEKEY}
 
   # MySQL Service
   mysql:
